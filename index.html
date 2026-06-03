@@ -13,12 +13,18 @@
         .btn-blue { background-color: #0056b3; color: white; border-radius: 12px; font-weight: bold; width: 100%; padding: 12px; border: none; }
         .subject-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 14px; }
         #result-text { margin-top: 20px; text-align: center; padding: 15px; border-radius: 12px; font-weight: bold; display: none; }
+        /* تنسيق إضافي لرأس الصفحة */
+        .header-link { display: flex; align-items: center; justify-content: center; margin-bottom: 25px; text-decoration: none; color: white; }
+        .header-link img { width: 50px; height: 50px; border-radius: 50%; margin-left: 10px; border: 2px solid #0056b3; }
     </style>
 </head>
 <body>
 
 <div class="app-card">
-    <h3 class="text-center mb-4" style="color: #007bff;">🧮 حاسبة المعدل</h3>
+    <a href="https://t.me/Bacdz27_bot" class="header-link">
+        <img src="https://ibb.co/39PzBG97" alt="Logo">
+        <h3 style="margin: 0; font-size: 22px;">Bac dz 2027</h3>
+    </a>
     
     <select id="sectionSelect" class="form-select mb-4" style="background:#262626; color:white; border:none;" onchange="loadSubjects()">
         <option value="">اختر الشعبة</option>
@@ -79,7 +85,6 @@
             let input = row.querySelector('.score-input');
             let checkbox = row.querySelector('input[type="checkbox"]');
             
-            // يحسب فقط إذا كانت المادة ليست اختيارية، أو اختيارية ومفعلة
             if (!checkbox || checkbox.checked) {
                 let val = parseFloat(input.value);
                 if (input.value === '' || val < 0 || val > 20) {
